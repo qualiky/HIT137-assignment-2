@@ -139,9 +139,11 @@ def main():  # Function for user input and pattern generation [2]
 
   # Checking for non-integer inputs [2]
   except ValueError:
+    print("!!!!ERROR!!ERROR!!ERROR!!!!!")
     print("Please enter a valid integer")
   # Checking any other unexpected errors [2]
   except Exception as e:
+    print("!!ERROR!!ERROR!!ERROR!!")
     print(f"An Error occured: {e}")
 
 # Checking if the script runs directly [2]
