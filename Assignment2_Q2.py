@@ -62,8 +62,6 @@ with open("average_temp.txt", "w") as f:         # Writing the seasonal averages
 
 ## STATION WITH LARGEST TEMPERATURE RANGE ##
 
-months = ["January","February","March","April","May","June", "July","August","September","October","November","December"]
-
 maxi_temp = full_df.groupby("STATION_NAME")[months].max().max(axis=1) # max temperature for all stations in each month, then takes overall max for each station)
 mini_temp = full_df.groupby("STATION_NAME")[months].min().min(axis=1) # min temperature for all stations in each month, then takes overall min for each station)
 
@@ -73,11 +71,11 @@ largest_range = tempeature_range.max()
 top_stations = tempeature_range[tempeature_range == largest_range] # only stations with the largest range (in case of ties)
 
 with open("largest_temp_range_station.txt", "w") as f:
-    for station in top_stations.index:
+    for stations in top_stations.index:
         f.write(
-            f"{station}: Range {round(largest_range,2)}°C "
-            f"(Max: {round(maxi_temp[station],2)}°C, "
-            f"Min: {round(mini_temp[station],2)}°C)\n"
+            f"{stations}: Range {round(largest_range,2)}°C "
+            f"(Max: {round(maxi_temp[stations],2)}°C, "
+            f"Min: {round(mini_temp[stations],2)}°C)\n"
         )
 
 
@@ -93,9 +91,8 @@ most_stable_stations = std_dev[std_dev == most_stable_value]  # handles ties sta
 most_variable_stations = std_dev[std_dev == most_variable_value]
 
 with open("temperature_stability_stations.txt", "w") as f:
-    for station in most_stable_stations.index:
-        f.write(f"Most Stable: {station}: StdDev {round(most_stable_value,2)}°C\n")
+    for stations in most_stable_stations.index:
+        f.write(f"Most Stable: {stations}: StdDev {round(most_stable_value,2)}°C\n")
 
-    for station in most_variable_stations.index:
-        f.write(f"Most Variable: {station}: StdDev {round(most_variable_value,2)}°C\n")
-
+    for stations in most_variable_stations.index:
+        f.write(f"Most Variable: {stations}: StdDev {round(most_variable_value,2)}°C\n")
