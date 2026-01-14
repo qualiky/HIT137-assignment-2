@@ -1,2 +1,2 @@
-Most Stable: KYANCUTTA: StdDev 0.49°C
-Most Variable: MARBLE-BAR: StdDev 1.65°C
+Most Stable: KYANCUTTA: StdDev 0.49Â°C
+Most Variable: MARBLE-BAR: StdDev 1.65Â°C

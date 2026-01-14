@@ -1,4 +1,4 @@
-Summer: 32.1캜
-Autumn: 27.32캜
-Winter: 21.07캜
-Spring: 27.43캜
+Summer: 32.1째C
+Autumn: 27.32째C
+Winter: 21.07째C
+Spring: 27.43째C
